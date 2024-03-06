@@ -18,10 +18,10 @@
             "value": false
         },   
         "avdWorkloadSubsId": {
-            "value": "0f07e41f-4fbd-45c4-b9a0-3f83193ba03b"
+            "value": ""
         },
         "avdEnterpriseAppObjectId": {
-            "value": "8bd26aec-5bcf-4c61-aecb-4c4254125ab9"
+            "value": ""
         },
         "avdVmLocalUserName": {
             "value": "<<localUserName>>"
