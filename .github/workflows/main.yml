@@ -1,0 +1,23 @@
+name: Deploy Bicep file
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@main
+
+    - name: Log into Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Bicep file
+      uses: azure/arm-deploy@v1
+      with:
+        scope: subscription
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        template: ./workload/bicep/deploy-baseline.bicep
+        parameters: ./workload/bicep/parameters/deploy-baseline-parameters-example.json avdWorkloadSubsId=0f07e41f-4fbd-45c4-b9a0-3f83193ba03b deploymentPrefix=ARP3 avdVmLocalUserName=${{ secrets.avdVmLocalUserName }} avdVmLocalUserPassword=${{ secrets.avdVmLocalUserPassword }} avdIdentityServiceProvider=EntraID existingHubVnetResourceId="/subscriptions/0f07e41f-4fbd-45c4-b9a0-3f83193ba03b/resourceGroups/rgFSAVD1/providers/Microsoft.Network/virtualNetworks/fsAVD-VNET" avdEnterpriseAppObjectId="8bd26aec-5bcf-4c61-aecb-4c4254125ab9" avdDeployMonitoring=false createAvdVnet=true createAvdFslogixDeployment=true createPrivateDnsZones=false deployAlaWorkspace=false location=eastus
+        failOnStdErr: false
