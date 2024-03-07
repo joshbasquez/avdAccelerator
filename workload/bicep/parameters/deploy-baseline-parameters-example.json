@@ -90,10 +90,10 @@
             "value": "/subscriptions/0f07e41f-4fbd-45c4-b9a0-3f83193ba03b/resourceGroups/rg_ServerLabCentral/providers/Microsoft.Network/virtualNetworks/vnetProd01"
         },
         "avdVnetworkAddressPrefixes": {
-            "value": "192.168.0.0/16"
+            "value": "10.2.0.0/16"
         },
         "vNetworkAvdSubnetAddressPrefix": {
-            "value": "192.168.1.0/24"
+            "value": "10.2.1.0/24"
         },
         "vNetworkPrivateEndpointSubnetAddressPrefix": {
             "value": ""
