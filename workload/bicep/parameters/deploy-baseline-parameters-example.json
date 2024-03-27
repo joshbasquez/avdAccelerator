@@ -6,7 +6,7 @@
             "value": "AVDx"
         },
         "avdUseCustomNaming": {
-            "value": false
+            "value": true
         },
         "avdSessionHostLocation": {
             "value": "eastus"
